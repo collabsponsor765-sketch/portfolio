@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collabsponsor — Marketing that gets brands chosen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #15181F;
+      --paper: #EFEBE1;
+      --paper-hi: #F7F4EC;
+      --muted: #726C5E;
+      --accent: #FF3B5C;
+      --gold: #F2B33D;
+      --mint: #0FBE8F;
+      --line: rgba(21, 24, 31, 0.12);
+      --line-dark: rgba(239, 235, 225, 0.14);
+      --display: 'Fraunces', serif;
+      --body: 'Manrope', sans-serif;
+      --mono: 'Space Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media(max-width:640px) {
+      .wrap {
+        padding: 0 22px;
+      }
+    }
+
+    header.nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(239, 235, 225, 0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav.links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    nav.links a:not(.cta) {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      position: relative;
+    }
+
+    nav.links a:not(.cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 1px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+
+    nav.links a:not(.cta):hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav .cta {
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--ink);
+      color: var(--paper-hi);
+      padding: 11px 20px;
+      border-radius: 100px;
+      transition: background .2s ease;
+    }
+
+    .nav .cta:hover {
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    @media(max-width:760px) {
+      nav.links a:not(.cta) {
+        display: none;
+      }
+    }
+
+    .hero {
+      padding: 168px 0 90px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: end;
+    }
+
+    @media(max-width:900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow .sw {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1.headline {
+      font-family: var(--display);
+      font-weight: 560;
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1.03;
+      letter-spacing: -0.015em;
+    }
+
+    h1.headline .it {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .hero-side {
+      padding-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-solid {
+      background: var(--ink);
+      color: var(--paper-hi);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 15px 26px;
+      border-radius: 100px;
+      transition: transform .2s ease, background .2s ease;
+      display: inline-block;
+    }
+
+    .btn-solid:hover {
+      transform: translateY(-2px);
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    .btn-line {
+      font-weight: 700;
+      font-size: 14px;
+      padding: 15px 4px;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .stat-row {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      padding-top: 26px;
+      gap: 20px;
+    }
+
+    @media(max-width:700px) {
+      .stat-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .stat-num {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(26px, 3vw, 36px);
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    .marquee-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--ink);
+      overflow: hidden;
+      padding: 20px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll 32s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--paper-hi);
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .marquee-track span.dim {
+      color: rgba(239, 235, 225, 0.35);
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 14px;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .section {
+      padding: 120px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    h2.section-title {
+      font-family: var(--display);
+      font-weight: 560;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -0.01em;
+    }
+
+    .section-note {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    @media(max-width:900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:520px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: var(--paper-hi);
+      padding: 34px 26px;
+      transition: background .2s ease;
+    }
+
+    .service-card:hover {
+      background: #fff;
+    }
+
+    .service-num {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .service-title {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 180px;
+      gap: 16px;
+    }
+
+    .bento-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--paper-hi);
+    }
+
+    .bento-item .bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .bento-item .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .b1 {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+
+    .b2 {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .b3 {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .b4 {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .b5 {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    @media(max-width:860px) {
+      .bento {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .b1,
+      .b2,
+      .b3,
+      .b4,
+      .b5 {
+        grid-column: span 2;
+        grid-row: span 1;
+        min-height: 220px;
+      }
+    }
+
+    .bg.p1 {
+      background: linear-gradient(150deg, #1D2430, #FF3B5C 130%);
+    }
+
+    .bg.p2 {
+      background: linear-gradient(150deg, #12211D, #0FBE8F 130%);
+    }
+
+    .bg.p3 {
+      background: linear-gradient(150deg, #241C10, #F2B33D 130%);
+    }
+
+    .bg.p4 {
+      background: linear-gradient(150deg, #1B1830, #8B7BFF 130%);
+    }
+
+    .bg.p5 {
+      background: linear-gradient(150deg, #241018, #FF7A5C 130%);
+    }
+
+    .bento-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.75;
+      margin-bottom: 8px;
+    }
+
+    .bento-title {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(18px, 2vw, 26px);
+      line-height: 1.1;
+    }
+
+    .bento-result {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      opacity: 0.9;
+    }
+
+    .process-row {
+      display: flex;
+      border-top: 1px solid var(--line);
+    }
+
+    .process-item {
+      flex: 1;
+      padding: 34px 24px 34px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .process-item:last-child {
+      border-right: none;
+    }
+
+    @media(max-width:860px) {
+      .process-row {
+        flex-direction: column;
+      }
+
+      .process-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding: 26px 0;
+      }
+    }
+
+    .process-step {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .process-title {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .process-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .dark-section {
+      background: var(--ink);
+      color: var(--paper-hi);
+      padding: 130px 0;
+    }
+
+    .quote {
+      font-family: var(--display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(26px, 3.6vw, 42px);
+      line-height: 1.35;
+      max-width: 820px;
+    }
+
+    .quote-attr {
+      margin-top: 30px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: rgba(239, 235, 225, 0.6);
+    }
+
+    .quote-attr b {
+      color: var(--gold);
+    }
+
+    .logo-row {
+      margin-top: 70px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 44px;
+      border-top: 1px solid var(--line-dark);
+      padding-top: 36px;
+    }
+
+    .logo-row span {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 19px;
+      color: rgba(239, 235, 225, 0.55);
+      transition: color .2s ease;
+    }
+
+    .logo-row span:hover {
+      color: var(--paper-hi);
+    }
+
+    footer.signoff {
+      padding: 130px 0 60px;
+    }
+
+    .signoff-headline {
+      font-family: var(--display);
+      font-weight: 560;
+      font-size: clamp(34px, 5.4vw, 64px);
+      line-height: 1.05;
+      max-width: 760px;
+      letter-spacing: -0.01em;
+    }
+
+    .signoff-headline .it {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .signoff-row {
+      margin-top: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
+
+    .signoff-meta {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .foot-bottom {
+      margin-top: 90px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* Video Masonry Styles */
+    .video-masonry-section {
+      padding: 168px 0 90px;
+      background: var(--ink);
+      color: var(--paper-hi);
+    }
+
+    .masonry-grid {
+      column-count: 3;
+      column-gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media(max-width: 900px) {
+      .masonry-grid {
+        column-count: 2;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .masonry-grid {
+        column-count: 1;
+      }
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .masonry-item video {
+      width: 100%;
+      display: block;
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: background 0.3s, opacity 0.3s;
+      z-index: 2;
+    }
+
+    .play-overlay:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .play-button-custom {
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: var(--paper-hi);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(255, 59, 92, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .play-overlay:hover .play-button-custom {
+      transform: scale(1.1);
+    }
+
+    .play-button-custom svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+      margin-left: 4px;
+    }
+
+    .masonry-item.playing .play-overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @media(max-width: 640px) {
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">Collab<span>sponsor</span></div>
+      <nav class="links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="video-masonry-section" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-tag" style="color:var(--accent);">Our Work</span>
+          <h2 class="section-title">Selected Video Campaigns</h2>
+        </div>
+      </div>
+
+      <div class="masonry-grid reveal">
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101675/EURO_KIDS_02_vnadaf.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101678/Mahakoshal_syndrome_w86dyr.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101678/RajulGreenWoods01_loh8iu.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101677/jpcricket-allstudent_azauci.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101676/GYM01_t9ngdt.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101674/Sequence_01-4_gfgexq.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101673/Dr.Spandhanbiswas01_mrfczt.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101673/1_issz7h.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101672/jp-sir-00000000001_rzpang.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101672/VID-20260203-WA0029_o0s3c5.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101668/VID-20260203-WA0028_rincby.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101665/shilpa-ma-am03_f5xlly.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101663/dr-rupanshu_lok8uy.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101659/Ashishsir04_01_111111_fxrhiu.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101658/Dr._Rupali_ma_am_srwics.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101656/rk-mishra2105mp4_bmva0o.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101653/9_ipw430.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <video preload="none"
+            data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101651/A_S01__tbmr0o.webm"></video>
+          <div class="play-overlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-tag">What we do</span>
+          <h2 class="section-title">Four ways we grow you</h2>
+        </div>
+        <div class="section-note">Pick one, or let us run the whole system end to end.</div>
+      </div>
+      <div class="service-grid reveal">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-title">Social Strategy</div>
+          <div class="service-desc">Content calendars, positioning and platform strategy built around how your audience
+            actually scrolls.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-title">Paid Media</div>
+          <div class="service-desc">Meta, TikTok and Google campaigns managed end to end — creative, targeting, and
+            budget optimization.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-title">Video Production</div>
+          <div class="service-desc">Short-form ads, brand films and UGC-style content, shot and edited to convert, not
+            just look good.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-title">Brand Campaigns</div>
+          <div class="service-desc">Full-funnel launches that tie your identity, message and channels into one coherent
+            push.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-tag">How we work</span>
+          <h2 class="section-title">A process you can follow</h2>
+        </div>
+      </div>
+      <div class="process-row reveal">
+        <div class="process-item">
+          <div class="process-step">01 / Brief</div>
+          <div class="process-title">We listen first</div>
+          <div class="process-desc">A short call to understand your audience, goal, and what success looks like.</div>
+        </div>
+        <div class="process-item">
+          <div class="process-step">02 / Plan</div>
+          <div class="process-title">Strategy &amp; channel mix</div>
+          <div class="process-desc">We map the exact channels, formats and cadence that fit your budget and goal.</div>
+        </div>
+        <div class="process-item">
+          <div class="process-step">03 / Produce</div>
+          <div class="process-title">Build the campaign</div>
+          <div class="process-desc">Content, ads and creative get made — and reviewed with you before it goes live.
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-step">04 / Optimize</div>
+          <div class="process-title">Run &amp; improve</div>
+          <div class="process-desc">We track performance weekly and adjust spend and creative toward what's working.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="dark-section">
+    <div class="wrap">
+      <div class="quote reveal">"Collabsponsor is the first agency where the campaign actually moved a number we cared
+        about — not just our follower count."</div>
+      <div class="quote-attr reveal">— <b>Marketing Lead</b>, Orbit Foods</div>
+
+      <div class="logo-row reveal">
+        <span>Nova</span>
+        <span>Orbit</span>
+        <span>Kira</span>
+        <span>Flux</span>
+        <span>Harbor</span>
+        <span>Petal&amp;Co</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="signoff" id="contact">
+    <div class="wrap">
+      <div class="signoff-headline reveal">Have a launch coming up? Let's <span class="it">build it together</span>.
+      </div>
+      <div class="signoff-row reveal">
+        <a href="mailto:collabsponsor768@gmail.com" class="btn-solid">collabsponsor768@gmail.com</a>
+        <div class="signoff-meta">
+          Based remote, working worldwide<br>
+          Reply time: usually under 24h<br>
+          <a href="#work" class="btn-line">↑ Back to work</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Collabsponsor</span>
+        <span>Instagram · LinkedIn</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const items = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(i => io.observe(i));
+
+      // Video Lazy Loading Logic
+      const lazyVideos = document.querySelectorAll('video[data-src]');
+      const videoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const video = entry.target;
+            video.src = video.getAttribute('data-src');
+            video.load(); // Load the video metadata
+            video.removeAttribute('data-src');
+
+            // Event listener to pause all other videos and show controls when this one starts playing
+            video.addEventListener('play', () => {
+              video.setAttribute('controls', 'true');
+              video.parentElement.classList.add('playing');
+              document.querySelectorAll('video').forEach(v => {
+                if (v !== video) {
+                  v.pause();
+                }
+              });
+            });
+
+            video.addEventListener('pause', () => {
+              video.removeAttribute('controls');
+              video.parentElement.classList.remove('playing');
+            });
+
+            video.addEventListener('ended', () => {
+              video.removeAttribute('controls');
+              video.parentElement.classList.remove('playing');
+            });
+
+            // Custom play overlay click handler
+            const overlay = video.nextElementSibling;
+            if (overlay && overlay.classList.contains('play-overlay')) {
+              overlay.addEventListener('click', () => {
+                video.play();
+              });
+            }
+
+            // Click video directly to pause it if it's playing (or play if paused)
+            video.addEventListener('click', () => {
+              if (video.paused) {
+                video.play();
+              } else {
+                video.pause();
+              }
+            });
+
+            observer.unobserve(video);
+          }
+        });
+      }, { rootMargin: "0px 0px 200px 0px" });
+
+      lazyVideos.forEach(video => {
+        videoObserver.observe(video);
+      });
+    })();
+  </script>
+
+  <a href="https://wa.me/9109832579" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg>
+  </a>
+
+</body>
+
+</html>
