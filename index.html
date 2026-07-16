@@ -690,27 +690,39 @@
     }
 
     .masonry-grid {
-      column-count: 3;
-      column-gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     @media(max-width: 900px) {
       .masonry-grid {
-        column-count: 2;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media(max-width: 600px) {
+      .video-masonry-section {
+        padding: 90px 0 60px;
+      }
       .masonry-grid {
-        column-count: 1;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .play-button-custom {
+        width: 40px;
+        height: 40px;
+      }
+      .play-button-custom svg {
+        width: 20px;
+        height: 20px;
+        margin-left: 3px;
       }
     }
 
     .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 20px;
       border-radius: 12px;
       overflow: hidden;
       background: #000;
@@ -720,6 +732,8 @@
 
     .masonry-item video {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
@@ -821,6 +835,34 @@
     </div>
   </header>
 
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><div class="sw"></div> Marketing Agency</div>
+          <h1 class="headline">Marketing that gets brands <span class="it">chosen</span>.</h1>
+        </div>
+        <div class="hero-side reveal">
+          <div class="hero-sub">We build content, run ads, and launch campaigns that turn viewers into customers.</div>
+          <div class="hero-actions">
+            <a href="#work" class="btn-solid">View our work</a>
+            <a href="#services" class="btn-line">What we do</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="margin-top: 70px; border-top: 1px solid var(--line); padding-top: 26px; font-size: 17px; color: var(--muted);">
+        For more details visit <a href="https://www.collabsponsor.com" style="color: var(--accent); font-weight: 600;">www.collabsponsor.com</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span>Content Creation <span class="dim">•</span> Performance Marketing <span class="dim">•</span> Video Production <span class="dim">•</span> Social Strategy <span class="dim">•</span> Brand Campaigns <span class="dim">•</span></span>
+      <span>Content Creation <span class="dim">•</span> Performance Marketing <span class="dim">•</span> Video Production <span class="dim">•</span> Social Strategy <span class="dim">•</span> Brand Campaigns <span class="dim">•</span></span>
+    </div>
+  </div>
+
   <section class="video-masonry-section" id="work">
     <div class="wrap">
       <div class="section-head reveal">
@@ -832,8 +874,8 @@
 
       <div class="masonry-grid reveal">
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120633/01_gcl7in.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101675/EURO_KIDS_02_vnadaf.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101675/EURO_KIDS_02_vnadaf.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -844,8 +886,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120632/02_c6eacc.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101678/Mahakoshal_syndrome_w86dyr.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101678/Mahakoshal_syndrome_w86dyr.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -856,8 +898,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120634/03_z1qpad.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101678/RajulGreenWoods01_loh8iu.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101678/RajulGreenWoods01_loh8iu.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -868,8 +910,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120631/04_qaisla.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101677/jpcricket-allstudent_azauci.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101677/jpcricket-allstudent_azauci.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -880,8 +922,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120634/05_r1zgrs.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101676/GYM01_t9ngdt.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101676/GYM01_t9ngdt.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -892,8 +934,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120633/06_znlbhf.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101674/Sequence_01-4_gfgexq.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101674/Sequence_01-4_gfgexq.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -904,8 +946,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120632/07_v0qqma.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101673/Dr.Spandhanbiswas01_mrfczt.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101673/Dr.Spandhanbiswas01_mrfczt.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -916,8 +958,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120638/08_w902do.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101673/1_issz7h.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101673/1_issz7h.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -928,8 +970,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120633/09_lheydx.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101672/jp-sir-00000000001_rzpang.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101672/jp-sir-00000000001_rzpang.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -940,8 +982,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120631/10_pgyir3.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101672/VID-20260203-WA0029_o0s3c5.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101672/VID-20260203-WA0029_o0s3c5.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -952,8 +994,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120632/11_2_sw3hb6.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101668/VID-20260203-WA0028_rincby.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101668/VID-20260203-WA0028_rincby.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -964,8 +1006,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120632/12_uuj6fd.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101665/shilpa-ma-am03_f5xlly.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101665/shilpa-ma-am03_f5xlly.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -976,8 +1018,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120632/13_jh8ns8.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101663/dr-rupanshu_lok8uy.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101663/dr-rupanshu_lok8uy.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -988,8 +1030,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120630/14_fmbs1k.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101659/Ashishsir04_01_111111_fxrhiu.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101659/Ashishsir04_01_111111_fxrhiu.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -1000,8 +1042,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120634/15_mjkac0.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101658/Dr._Rupali_ma_am_srwics.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101658/Dr._Rupali_ma_am_srwics.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -1012,8 +1054,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120631/16_qinylm.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101656/rk-mishra2105mp4_bmva0o.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101656/rk-mishra2105mp4_bmva0o.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -1024,8 +1066,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120631/17_wh3vz2.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101653/9_ipw430.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101653/9_ipw430.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -1036,8 +1078,8 @@
           </div>
         </div>
         <div class="masonry-item">
-          <video preload="none"
-            poster="https://res.cloudinary.com/lhh411kj/image/upload/q_auto,f_auto/v1784120634/18_zpjrex.png"
+          <video preload="none" playsinline webkit-playsinline
+            poster="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101651/A_S01__tbmr0o.jpg"
             data-src="https://res.cloudinary.com/lhh411kj/video/upload/q_auto,f_auto/v1784101651/A_S01__tbmr0o.webm"></video>
           <div class="play-overlay">
             <div class="play-button-custom">
@@ -1130,15 +1172,20 @@
     <div class="wrap">
       <div class="quote reveal">"Collabsponsor is the first agency where the campaign actually moved a number we cared
         about — not just our follower count."</div>
-      <div class="quote-attr reveal">— <b>Marketing Lead</b>, Orbit Foods</div>
+      <div class="quote-attr reveal">— <b>Marketing Lead</b></div>
 
       <div class="logo-row reveal">
-        <span>Nova</span>
-        <span>Orbit</span>
-        <span>Kira</span>
-        <span>Flux</span>
-        <span>Harbor</span>
-        <span>Petal&amp;Co</span>
+        <span>JP Cricket Academy</span>
+        <span>Laxmi Narayan Hospital</span>
+        <span>Dr. Rupanshu Mehra</span>
+        <span>Koura India</span>
+        <span>Shree Fitness Gym</span>
+        <span>Kridashala</span>
+        <span>Rajul Builders</span>
+        <span>Dr.Rupali Mithhal</span>
+        <span>Dr.Ashish Gupta </span>
+        
+        <span>Sanjivan Hospital</span>
       </div>
     </div>
   </div>
